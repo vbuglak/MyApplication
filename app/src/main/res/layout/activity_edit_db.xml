@@ -109,8 +109,8 @@
 
     <LinearLayout
         android:layout_width="368dp"
-        android:layout_height="258dp"
-        android:layout_marginTop="184dp"
+        android:layout_height="215dp"
+        android:layout_marginTop="220dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="8dp">
@@ -119,6 +119,31 @@
             android:id="@+id/graph"
             android:layout_width="match_parent"
             android:layout_height="200dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_spin"
+        android:layout_width="368dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="180dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/mounth" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/year" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
