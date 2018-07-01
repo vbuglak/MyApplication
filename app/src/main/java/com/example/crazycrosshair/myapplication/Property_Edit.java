@@ -17,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -183,6 +184,11 @@ public class Property_Edit extends AppCompatActivity {
     public void pro_save_clicked(View view) {
         ContentValues contentvalues = new ContentValues();
         SQLiteDatabase datebase = db.getReadableDatabase();
+        Toast toastupdate = Toast.makeText(getApplicationContext(),
+                "Свойства обновлены в бд", Toast.LENGTH_SHORT);
+        Toast toastinsert = Toast.makeText(getApplicationContext(),
+                "Свойства добавлены в бд", Toast.LENGTH_SHORT);
+
 
 
         LinearLayout rawll = findViewById(R.id.raw_ll);
@@ -201,6 +207,7 @@ public class Property_Edit extends AppCompatActivity {
                 null,null,null);
             if (!cursor.moveToFirst()){
                 datebase.insert(DataBase.TABLE_PRO,null,contentvalues);
+                toastinsert.show();
             }
             else {
                 datebase.update(DataBase.TABLE_PRO,contentvalues,
@@ -210,6 +217,7 @@ public class Property_Edit extends AppCompatActivity {
                             currentDateTime.getText().toString().replaceAll(",","")+"'",null);
             cursor.close();
             db.close();
+                toastupdate.show();
             }
             }
 }
