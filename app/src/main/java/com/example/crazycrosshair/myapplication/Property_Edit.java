@@ -196,10 +196,14 @@ public class Property_Edit extends AppCompatActivity {
             LinearLayout tmpl = (LinearLayout) rawll.getChildAt(i);
             TextView tmptw = (TextView) tmpl.getChildAt(0);
             EditText tmped = (EditText) tmpl.getChildAt(1);
-            contentvalues.put(tmptw.getText().toString(), tmped.getText().toString());
+            if (tmped.getText().toString().equals("")) {
+                contentvalues.put(tmptw.getText().toString(), "0");
+            } else {
+                contentvalues.put(tmptw.getText().toString(), tmped.getText().toString());
             }
-            contentvalues.put(DataBase.KEY_ANIM,getIntent().getIntExtra("updateid",0));
-            contentvalues.put(DataBase.KEY_DATE,currentDateTime.getText().toString().replaceAll(",",""));
+            contentvalues.put(DataBase.KEY_ANIM, getIntent().getIntExtra("updateid", 0));
+            contentvalues.put(DataBase.KEY_DATE, currentDateTime.getText().toString().replaceAll(",", ""));
+            }
             Cursor cursor = datebase.query(DataBase.TABLE_PRO,null,
                     DataBase.KEY_ANIM + " = " + getIntent().getIntExtra("updateid",0)
                         + " AND " + DataBase.KEY_DATE + " = '" +
