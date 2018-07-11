@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -19,14 +18,13 @@ import com.jjoe64.graphview.LegendRenderer;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
-import java.util.ArrayList;
+
 
 
 import sqlite.DataBase;
 
 import static sqlite.DataBase.KEY_AGE;
 import static sqlite.DataBase.KEY_ANIM;
-import static sqlite.DataBase.KEY_DATE;
 import static sqlite.DataBase.KEY_GENDER;
 import static sqlite.DataBase.KEY_ID;
 import static sqlite.DataBase.KEY_NAME;
@@ -80,8 +78,7 @@ public class EditDB extends AppCompatActivity implements AdapterView.OnItemSelec
             edit_pro_but.setVisibility(View.GONE);
             graph.setVisibility(View.GONE);
             ll_spin.setVisibility(View.GONE);
-           // mounth_spin.setVisibility(View.GONE);
-           // year_spin.setVisibility(View.GONE);
+
         }
         else {
             update = true;

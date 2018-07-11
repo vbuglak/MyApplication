@@ -89,6 +89,8 @@ public class Property_Edit extends AppCompatActivity {
         final LinearLayout ll = new LinearLayout(this);
         final EditText ed1 = new EditText(this);
         Button confirm_but = new Button(this);
+        Button add_but = findViewById(R.id.pro_add_but);
+        add_but.setEnabled(false);
         ed1.setLayoutParams(params);
         ed1.setHint("Property");
         confirm_but.setLayoutParams(params);
@@ -155,6 +157,8 @@ public class Property_Edit extends AppCompatActivity {
                     ed2.setLayoutParams(params);
                     ll.addView(tv1);
                     ll.addView(ed2);
+                    Button add_but = findViewById(R.id.pro_add_but);
+                    add_but.setEnabled(true);
 
                 }
             }
